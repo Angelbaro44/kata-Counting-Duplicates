@@ -3,18 +3,24 @@
 //of zero. If it is already in the list it will 
 //add one to the letter value and increse the 
 //result score for the solution.
+
 function duplicateCount(text){
+
       let result = 0, indexingArray = [];
+
       text.toLowerCase().split('').map(letter => {
+
           if (!indexingArray.hasOwnProperty(letter))
             indexingArray[letter] = 0;
+
            else {
             if (indexingArray[letter] === 0) 
               result += 1;
             
             indexingArray[letter] = indexingArray[letter] + 1;
           }
-      });
+      });//End of map
+
       console.log(result);
       return result;
     }
